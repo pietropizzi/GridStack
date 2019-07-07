@@ -45,23 +45,35 @@ public struct GridStack<Content>: View where Content: View {
 
 private struct InnerGrid<Content>: View where Content: View {
     
-    var minCellWidth: Length
-    var spacing: Length
-    var numItems: Int
-    var alignment: HorizontalAlignment
-    var content: (Int, CGFloat) -> Content
-    var availableWidth: Length
+    private let minCellWidth: Length
+    private let spacing: Length
+    private let numItems: Int
+    private let alignment: HorizontalAlignment
+    private let content: (Int, CGFloat) -> Content
+    private let cellWidth: Length
+    private let columns: Int
     
-    var cellWidth: Length {
-        let remainingWidth = availableWidth - (Length((columns + 1)) * spacing)
-        return remainingWidth / Length(columns)
-    }
-    
-    var columns: Int {
-        max(
-            Int((availableWidth - spacing) / (minCellWidth + spacing)),
-            1
+    init(
+        minCellWidth: Length,
+        spacing: Length,
+        numItems: Int,
+        alignment: HorizontalAlignment = .leading,
+        @ViewBuilder content: @escaping (Int, CGFloat) -> Content,
+        availableWidth: Length
+    ) {
+        self.minCellWidth = minCellWidth
+        self.spacing = spacing
+        self.numItems = numItems
+        self.alignment = alignment
+        self.content = content
+        
+        let columns = max(
+            1, Int((availableWidth - spacing) / (minCellWidth + spacing))
         )
+        let remainingWidth = availableWidth - (Length((columns + 1)) * spacing)
+        
+        self.columns = columns
+        cellWidth = remainingWidth / Length(columns)
     }
     
     var body : some View {
