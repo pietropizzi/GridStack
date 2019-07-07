@@ -7,12 +7,27 @@
 
 import SwiftUI
 
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct GridStack<Content>: View where Content: View {
-    public var minCellWidth: Length
-    public var spacing: Length
-    public var numItems: Int
-    public var alignment: HorizontalAlignment = .leading
-    public var content: (Int, CGFloat) -> Content
+    private let minCellWidth: Length
+    private let spacing: Length
+    private let numItems: Int
+    private let alignment: HorizontalAlignment
+    private let content: (Int, CGFloat) -> Content
+    
+    public init(
+        minCellWidth: Length,
+        spacing: Length,
+        numItems: Int,
+        alignment: HorizontalAlignment = .leading,
+        @ViewBuilder content: @escaping (Int, CGFloat) -> Content
+    ) {
+        self.minCellWidth = minCellWidth
+        self.spacing = spacing
+        self.numItems = numItems
+        self.alignment = alignment
+        self.content = content
+    }
     
     public var body: some View {
         GeometryReader { geometry in
