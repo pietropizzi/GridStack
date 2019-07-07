@@ -1,4 +1,4 @@
-# GridStack
+# 📱GridStack
 
 A flexible grid layout view for SwiftUI.
 
