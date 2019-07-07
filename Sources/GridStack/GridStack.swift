@@ -8,13 +8,13 @@
 import SwiftUI
 
 public struct GridStack<Content>: View where Content: View {
-    var minCellWidth: Length
-    var spacing: Length
-    var numItems: Int
-    var alignment: HorizontalAlignment = .leading
-    var content: (Int, CGFloat) -> Content
+    public var minCellWidth: Length
+    public var spacing: Length
+    public var numItems: Int
+    public var alignment: HorizontalAlignment = .leading
+    public var content: (Int, CGFloat) -> Content
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             InnerGrid(
                 minCellWidth: self.minCellWidth,
