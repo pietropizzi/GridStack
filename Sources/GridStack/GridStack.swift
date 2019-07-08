@@ -14,6 +14,7 @@ public struct GridStack<Content>: View where Content: View {
     private let numItems: Int
     private let alignment: HorizontalAlignment
     private let content: (Int, CGFloat) -> Content
+    private let gridCalculator = GridCalculator()
     
     public init(
         minCellWidth: Length,
@@ -41,7 +42,7 @@ public struct GridStack<Content>: View where Content: View {
                 items: self.items,
                 alignment: self.alignment,
                 content: self.content,
-                gridCalculator: GridCalculator(
+                gridDefinition: self.gridCalculator.calculate(
                     availableWidth: geometry.size.width,
                     minimumCellWidth: self.minCellWidth,
                     cellSpacing: self.spacing
@@ -57,7 +58,7 @@ private struct InnerGrid<Content>: View where Content: View {
     private let chunkedItems: [[Int]]
     private let alignment: HorizontalAlignment
     private let content: (Int, CGFloat) -> Content
-    private let cellWidth: Length
+    private let columnWidth: Length
     
     init(
         minCellWidth: Length,
@@ -65,13 +66,13 @@ private struct InnerGrid<Content>: View where Content: View {
         items: [Int],
         alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Int, CGFloat) -> Content,
-        gridCalculator: GridCalculator
+        gridDefinition: GridCalculator.GridDefinition
     ) {
         self.spacing = spacing
         self.alignment = alignment
         self.content = content
-        self.cellWidth = gridCalculator.cellWidth
-        chunkedItems = items.chunked(into: gridCalculator.columnCount)
+        self.columnWidth = gridDefinition.columnWidth
+        chunkedItems = items.chunked(into: gridDefinition.columnCount)
     }
     
     var body : some View {
@@ -83,8 +84,8 @@ private struct InnerGrid<Content>: View where Content: View {
                         // Items In Row
                         ForEach(row) { item in
                             // Pass the index and the cell width to the content
-                            self.content(item, self.cellWidth)
-                                .frame(width: self.cellWidth)
+                            self.content(item, self.columnWidth)
+                                .frame(width: self.columnWidth)
                         }
                     }.padding(.horizontal, self.spacing)
                 }
