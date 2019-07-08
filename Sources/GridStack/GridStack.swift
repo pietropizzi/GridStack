@@ -75,11 +75,9 @@ private struct InnerGrid<Content>: View where Content: View {
     
     var body : some View {
         ScrollView(.vertical) {
-            // Rows
             VStack(alignment: alignment, spacing: spacing) {
                 ForEach(rows.identified(by: \.self)) { row in
                     HStack(spacing: self.spacing) {
-                        // Items In Row
                         ForEach(row) { item in
                             // Pass the index and the cell width to the content
                             self.content(item, self.columnWidth)
