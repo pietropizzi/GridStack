@@ -29,12 +29,16 @@ public struct GridStack<Content>: View where Content: View {
         self.content = content
     }
     
+    var items: [Int] {
+        Array(0..<numItems).map { $0 }
+    }
+    
     public var body: some View {
         GeometryReader { geometry in
             InnerGrid(
                 minCellWidth: self.minCellWidth,
                 spacing: self.spacing,
-                numItems: self.numItems,
+                items: self.items,
                 alignment: self.alignment,
                 content: self.content,
                 availableWidth: geometry.size.width
@@ -45,71 +49,47 @@ public struct GridStack<Content>: View where Content: View {
 
 private struct InnerGrid<Content>: View where Content: View {
     
-    private let minCellWidth: Length
     private let spacing: Length
-    private let numItems: Int
+    private let chunkedItems: [[Int]]
     private let alignment: HorizontalAlignment
     private let content: (Int, CGFloat) -> Content
     private let cellWidth: Length
-    private let columns: Int
     
     init(
         minCellWidth: Length,
         spacing: Length,
-        numItems: Int,
+        items: [Int],
         alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Int, CGFloat) -> Content,
-        availableWidth: Length
-    ) {
-        self.minCellWidth = minCellWidth
+                     availableWidth: Length
+        ) {
         self.spacing = spacing
-        self.numItems = numItems
         self.alignment = alignment
         self.content = content
         
-        let columns = max(
+        let columnCount = max(
             1, Int((availableWidth - spacing) / (minCellWidth + spacing))
         )
-        let remainingWidth = availableWidth - (Length((columns + 1)) * spacing)
+        let remainingWidth = availableWidth - (Length((columnCount + 1)) * spacing)
         
-        self.columns = columns
-        cellWidth = remainingWidth / Length(columns)
+        cellWidth = remainingWidth / Length(columnCount)
+        chunkedItems = items.chunked(into: columnCount)
     }
     
     var body : some View {
         ScrollView(.vertical) {
             // Rows
-            VStack(alignment: self.alignment, spacing: spacing) {
-                ForEach(0 ..< (self.numItems / self.columns)) { row in
+            VStack(alignment: alignment, spacing: spacing) {
+                ForEach(chunkedItems.identified(by: \.self)) { row in
                     HStack(spacing: self.spacing) {
                         // Items In Row
-                        ForEach(0 ..< self.columns) { column in
-                            self.content(
-                                // Pass the index to the content
-                                (row * self.columns) + column,
-                                // Pass the column width to the content
-                                self.cellWidth
-                            )
-                                // Size the content to frame to fill the column
+                        ForEach(row) { item in
+                            // Pass the index and the cell width to the content
+                            self.content(item, self.cellWidth)
                                 .frame(width: self.cellWidth)
                         }
                     }.padding(.horizontal, self.spacing)
                 }
-                
-                // Last row
-                // HStacks are our columns
-                HStack(spacing: spacing) {
-                    ForEach(0 ..< (self.numItems % self.columns)) { column in
-                        self.content(
-                            // Pass the index to the content
-                            ((self.numItems / self.columns) * self.columns) + column,
-                            // Pass the column width to the content
-                            self.cellWidth
-                        )
-                            // Size the content to frame to fill the column
-                            .frame(width: self.cellWidth)
-                    }
-                }.padding(.horizontal, self.spacing)
             }.padding(.top, spacing)
         }
     }
