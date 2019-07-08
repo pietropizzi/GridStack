@@ -54,7 +54,7 @@ public struct GridStack<Content>: View where Content: View {
 private struct InnerGrid<Content>: View where Content: View {
     
     private let spacing: Length
-    private let chunkedItems: [[Int]]
+    private let rows: [[Int]]
     private let alignment: HorizontalAlignment
     private let content: (Int, CGFloat) -> Content
     private let columnWidth: Length
@@ -70,14 +70,14 @@ private struct InnerGrid<Content>: View where Content: View {
         self.alignment = alignment
         self.content = content
         self.columnWidth = gridDefinition.columnWidth
-        chunkedItems = items.chunked(into: gridDefinition.columnCount)
+        rows = items.chunked(into: gridDefinition.columnCount)
     }
     
     var body : some View {
         ScrollView(.vertical) {
             // Rows
             VStack(alignment: alignment, spacing: spacing) {
-                ForEach(chunkedItems.identified(by: \.self)) { row in
+                ForEach(rows.identified(by: \.self)) { row in
                     HStack(spacing: self.spacing) {
                         // Items In Row
                         ForEach(row) { item in
