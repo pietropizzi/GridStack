@@ -41,7 +41,11 @@ public struct GridStack<Content>: View where Content: View {
                 items: self.items,
                 alignment: self.alignment,
                 content: self.content,
-                availableWidth: geometry.size.width
+                gridCalculator: GridCalculator(
+                    availableWidth: geometry.size.width,
+                    minimumCellWidth: self.minCellWidth,
+                    cellSpacing: self.spacing
+                )
             )
         }
     }
@@ -61,19 +65,13 @@ private struct InnerGrid<Content>: View where Content: View {
         items: [Int],
         alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Int, CGFloat) -> Content,
-                     availableWidth: Length
-        ) {
+        gridCalculator: GridCalculator
+    ) {
         self.spacing = spacing
         self.alignment = alignment
         self.content = content
-        
-        let columnCount = max(
-            1, Int((availableWidth - spacing) / (minCellWidth + spacing))
-        )
-        let remainingWidth = availableWidth - (Length((columnCount + 1)) * spacing)
-        
-        cellWidth = remainingWidth / Length(columnCount)
-        chunkedItems = items.chunked(into: columnCount)
+        self.cellWidth = gridCalculator.cellWidth
+        chunkedItems = items.chunked(into: gridCalculator.columnCount)
     }
     
     var body : some View {
