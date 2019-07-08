@@ -37,7 +37,6 @@ public struct GridStack<Content>: View where Content: View {
     public var body: some View {
         GeometryReader { geometry in
             InnerGrid(
-                minCellWidth: self.minCellWidth,
                 spacing: self.spacing,
                 items: self.items,
                 alignment: self.alignment,
@@ -61,7 +60,6 @@ private struct InnerGrid<Content>: View where Content: View {
     private let columnWidth: Length
     
     init(
-        minCellWidth: Length,
         spacing: Length,
         items: [Int],
         alignment: HorizontalAlignment = .leading,
