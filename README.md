@@ -76,6 +76,6 @@ GridStack(
 )
 ```
 
-## Mentions
+## 📝 Mentions
 
 I created `GridStack` by taking ideas from [FlowStack](https://github.com/johnsusek/FlowStack) by [John Susek](https://github.com/johnsusek).
