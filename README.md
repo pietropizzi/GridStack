@@ -9,7 +9,7 @@ So writing this:
 ```swift
 GridStack(minCellWidth: 300, spacing: 2, numItems: 15) { index, cellWidth in
     Text("\(index)")
-        .color(.white)
+        .foregroundColor(.white)
         .frame(width: cellWidth, height: cellWidth * 0.66)
         .background(Color.blue)
 }
