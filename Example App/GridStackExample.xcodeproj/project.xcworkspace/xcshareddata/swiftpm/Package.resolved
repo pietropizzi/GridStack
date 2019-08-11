@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GridStack",
+        "repositoryURL": "/Users/peter/dev/personal/GridStack",
+        "state": {
+          "branch": "master",
+          "revision": "9f40cb5b50640839f44afa2a6e3569f9e389ce6a",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
