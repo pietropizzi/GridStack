@@ -2,14 +2,14 @@ import SwiftUI
 
 struct GridCalculator {
     typealias GridDefinition = (
-        columnWidth: Length,
+        columnWidth: CGFloat,
         columnCount: Int
     )
     
     func calculate(
-        availableWidth: Length,
-        minimumCellWidth: Length,
-        cellSpacing: Length
+        availableWidth: CGFloat,
+        minimumCellWidth: CGFloat,
+        cellSpacing: CGFloat
     ) -> GridDefinition {
         /**
          * 1. Subtract the cell spacing once from all the available width
@@ -21,13 +21,13 @@ struct GridCalculator {
         let remainingWidth = availableWidth - totalSpacingFor(columnCount: columnCount, cellSpacing: cellSpacing)
         
         return (
-            columnWidth: remainingWidth / Length(columnCount),
+            columnWidth: remainingWidth / CGFloat(columnCount),
             columnCount: columnCount
         )
     }
     
-    private func totalSpacingFor(columnCount: Int, cellSpacing: Length) -> Length {
+    private func totalSpacingFor(columnCount: Int, cellSpacing: CGFloat) -> CGFloat {
         // There is a total of `columnCount + 1` spacers
-        return Length((columnCount + 1)) * cellSpacing
+        return CGFloat((columnCount + 1)) * cellSpacing
     }
 }
