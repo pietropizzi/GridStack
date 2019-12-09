@@ -51,6 +51,7 @@ public struct GridStack<Content>: View where Content: View {
     }
 }
 
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 private struct InnerGrid<Content>: View where Content: View {
     
     private let spacing: CGFloat
