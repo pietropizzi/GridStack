@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D020655D239E410000FB3F3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020655C239E410000FB3F3E /* AppDelegate.swift */; };
+		D020655F239E410000FB3F3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020655E239E410000FB3F3E /* ContentView.swift */; };
+		D0206561239E410200FB3F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0206560239E410200FB3F3E /* Assets.xcassets */; };
+		D0206564239E410200FB3F3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0206563239E410200FB3F3E /* Preview Assets.xcassets */; };
+		D0206567239E410200FB3F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0206565239E410200FB3F3E /* LaunchScreen.storyboard */; };
+		D0206570239E418900FB3F3E /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = D020656F239E418900FB3F3E /* GridStack */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D0206559239E410000FB3F3E /* GridStackExampleTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridStackExampleTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D020655C239E410000FB3F3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D020655E239E410000FB3F3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0206560239E410200FB3F3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0206563239E410200FB3F3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0206566239E410200FB3F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0206568239E410200FB3F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0206556239E410000FB3F3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0206570239E418900FB3F3E /* GridStack in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0206550239E410000FB3F3E = {
+			isa = PBXGroup;
+			children = (
+				D020655B239E410000FB3F3E /* GridStackExampleTv */,
+				D020655A239E410000FB3F3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D020655A239E410000FB3F3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0206559239E410000FB3F3E /* GridStackExampleTv.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D020655B239E410000FB3F3E /* GridStackExampleTv */ = {
+			isa = PBXGroup;
+			children = (
+				D020655C239E410000FB3F3E /* AppDelegate.swift */,
+				D020655E239E410000FB3F3E /* ContentView.swift */,
+				D0206560239E410200FB3F3E /* Assets.xcassets */,
+				D0206565239E410200FB3F3E /* LaunchScreen.storyboard */,
+				D0206568239E410200FB3F3E /* Info.plist */,
+				D0206562239E410200FB3F3E /* Preview Content */,
+			);
+			path = GridStackExampleTv;
+			sourceTree = "<group>";
+		};
+		D0206562239E410200FB3F3E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D0206563239E410200FB3F3E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0206558239E410000FB3F3E /* GridStackExampleTv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D020656B239E410200FB3F3E /* Build configuration list for PBXNativeTarget "GridStackExampleTv" */;
+			buildPhases = (
+				D0206555239E410000FB3F3E /* Sources */,
+				D0206556239E410000FB3F3E /* Frameworks */,
+				D0206557239E410000FB3F3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GridStackExampleTv;
+			packageProductDependencies = (
+				D020656F239E418900FB3F3E /* GridStack */,
+			);
+			productName = GridStackExampleTv;
+			productReference = D0206559239E410000FB3F3E /* GridStackExampleTv.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0206551239E410000FB3F3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Peter Minarik";
+				TargetAttributes = {
+					D0206558239E410000FB3F3E = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D0206554239E410000FB3F3E /* Build configuration list for PBXProject "GridStackExampleTv" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0206550239E410000FB3F3E;
+			packageReferences = (
+				D020656E239E418900FB3F3E /* XCRemoteSwiftPackageReference "GridStack" */,
+			);
+			productRefGroup = D020655A239E410000FB3F3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0206558239E410000FB3F3E /* GridStackExampleTv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0206557239E410000FB3F3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0206567239E410200FB3F3E /* LaunchScreen.storyboard in Resources */,
+				D0206564239E410200FB3F3E /* Preview Assets.xcassets in Resources */,
+				D0206561239E410200FB3F3E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0206555239E410000FB3F3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D020655F239E410000FB3F3E /* ContentView.swift in Sources */,
+				D020655D239E410000FB3F3E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0206565239E410200FB3F3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0206566239E410200FB3F3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0206569239E410200FB3F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		D020656A239E410200FB3F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D020656C239E410200FB3F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GridStackExampleTv/Preview Content\"";
+				DEVELOPMENT_TEAM = XR36XXUPD3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = GridStackExampleTv/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterminarik.GridStackExampleTv;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		D020656D239E410200FB3F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GridStackExampleTv/Preview Content\"";
+				DEVELOPMENT_TEAM = XR36XXUPD3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = GridStackExampleTv/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterminarik.GridStackExampleTv;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0206554239E410000FB3F3E /* Build configuration list for PBXProject "GridStackExampleTv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0206569239E410200FB3F3E /* Debug */,
+				D020656A239E410200FB3F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D020656B239E410200FB3F3E /* Build configuration list for PBXNativeTarget "GridStackExampleTv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D020656C239E410200FB3F3E /* Debug */,
+				D020656D239E410200FB3F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D020656E239E418900FB3F3E /* XCRemoteSwiftPackageReference "GridStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:pietropizzi/GridStack.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D020656F239E418900FB3F3E /* GridStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D020656E239E418900FB3F3E /* XCRemoteSwiftPackageReference "GridStack" */;
+			productName = GridStack;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D0206551239E410000FB3F3E /* Project object */;
+}
