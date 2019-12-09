@@ -2,6 +2,10 @@
 
 A flexible grid layout view for SwiftUI.
 
+![macOS](https://img.shields.io/badge/supports-macOS-success)
+![iOS](https://img.shields.io/badge/supports-iOS-success)
+![tvOS](https://img.shields.io/badge/supports-tvOS-success)
+
 Simply pass the minimum width the grid cells should have and the spacing between them and it will adjust depending on the available width.
 
 So writing this:
