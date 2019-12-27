@@ -9,6 +9,7 @@ import SwiftUI
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct GridStack<Content>: View where Content: View {
+    private let edgeInsets: UIEdgeInsets
     private let minCellWidth: CGFloat
     private let spacing: CGFloat
     private let numItems: Int
@@ -17,12 +18,14 @@ public struct GridStack<Content>: View where Content: View {
     private let gridCalculator = GridCalculator()
     
     public init(
+        edgeInsets: UIEdgeInsets = .zero,
         minCellWidth: CGFloat,
         spacing: CGFloat,
         numItems: Int,
         alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Int, CGFloat) -> Content
     ) {
+        self.edgeInsets = edgeInsets
         self.minCellWidth = minCellWidth
         self.spacing = spacing
         self.numItems = numItems
@@ -38,6 +41,7 @@ public struct GridStack<Content>: View where Content: View {
         GeometryReader { geometry in
             InnerGrid(
                 width: geometry.size.width,
+                edgeInsets: self.edgeInsets,
                 spacing: self.spacing,
                 items: self.items,
                 alignment: self.alignment,
@@ -56,6 +60,7 @@ public struct GridStack<Content>: View where Content: View {
 private struct InnerGrid<Content>: View where Content: View {
     
     private let width: CGFloat
+    private let edgeInsets: UIEdgeInsets
     private let spacing: CGFloat
     private let rows: [[Int]]
     private let alignment: HorizontalAlignment
@@ -64,6 +69,7 @@ private struct InnerGrid<Content>: View where Content: View {
     
     init(
         width: CGFloat,
+        edgeInsets: UIEdgeInsets,
         spacing: CGFloat,
         items: [Int],
         alignment: HorizontalAlignment = .leading,
@@ -71,6 +77,7 @@ private struct InnerGrid<Content>: View where Content: View {
         gridDefinition: GridCalculator.GridDefinition
     ) {
         self.width = width
+        self.edgeInsets = edgeInsets
         self.spacing = spacing
         self.alignment = alignment
         self.content = content
@@ -88,11 +95,12 @@ private struct InnerGrid<Content>: View where Content: View {
                             self.content(item, self.columnWidth)
                                 .frame(width: self.columnWidth)
                         }
-                    }.padding(.horizontal, self.spacing)
+                    }
                 }
             }
-            .padding(.top, spacing)
-            .frame(width: width)
+            .padding(.top, edgeInsets.top)
+            .padding(.bottom, edgeInsets.bottom)
+            .frame(width: width - edgeInsets.left - edgeInsets.right)
         }
     }
 }
