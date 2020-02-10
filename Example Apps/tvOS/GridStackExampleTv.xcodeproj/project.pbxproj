@@ -12,7 +12,7 @@
 		D0206561239E410200FB3F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0206560239E410200FB3F3E /* Assets.xcassets */; };
 		D0206564239E410200FB3F3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0206563239E410200FB3F3E /* Preview Assets.xcassets */; };
 		D0206567239E410200FB3F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0206565239E410200FB3F3E /* LaunchScreen.storyboard */; };
-		D0206570239E418900FB3F3E /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = D020656F239E418900FB3F3E /* GridStack */; };
+		D0F1D23723F18D9E00194E58 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = D0F1D23623F18D9E00194E58 /* GridStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +23,7 @@
 		D0206563239E410200FB3F3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0206566239E410200FB3F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0206568239E410200FB3F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F1D23423F18D9300194E58 /* GridStack */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GridStack; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0206570239E418900FB3F3E /* GridStack in Frameworks */,
+				D0F1D23723F18D9E00194E58 /* GridStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +42,9 @@
 			isa = PBXGroup;
 			children = (
 				D020655B239E410000FB3F3E /* GridStackExampleTv */,
+				D0F1D23423F18D9300194E58 /* GridStack */,
 				D020655A239E410000FB3F3E /* Products */,
+				D0F1D23523F18D9E00194E58 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +77,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D0F1D23523F18D9E00194E58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,7 +101,7 @@
 			);
 			name = GridStackExampleTv;
 			packageProductDependencies = (
-				D020656F239E418900FB3F3E /* GridStack */,
+				D0F1D23623F18D9E00194E58 /* GridStack */,
 			);
 			productName = GridStackExampleTv;
 			productReference = D0206559239E410000FB3F3E /* GridStackExampleTv.app */;
@@ -122,7 +132,6 @@
 			);
 			mainGroup = D0206550239E410000FB3F3E;
 			packageReferences = (
-				D020656E239E418900FB3F3E /* XCRemoteSwiftPackageReference "GridStack" */,
 			);
 			productRefGroup = D020655A239E410000FB3F3E /* Products */;
 			projectDirPath = "";
@@ -347,21 +356,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		D020656E239E418900FB3F3E /* XCRemoteSwiftPackageReference "GridStack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:pietropizzi/GridStack.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		D020656F239E418900FB3F3E /* GridStack */ = {
+		D0F1D23623F18D9E00194E58 /* GridStack */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D020656E239E418900FB3F3E /* XCRemoteSwiftPackageReference "GridStack" */;
 			productName = GridStack;
 		};
 /* End XCSwiftPackageProductDependency section */
