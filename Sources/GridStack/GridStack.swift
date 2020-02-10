@@ -37,6 +37,7 @@ public struct GridStack<Content>: View where Content: View {
     public var body: some View {
         GeometryReader { geometry in
             InnerGrid(
+                width: geometry.size.width,
                 spacing: self.spacing,
                 items: self.items,
                 alignment: self.alignment,
@@ -54,6 +55,7 @@ public struct GridStack<Content>: View where Content: View {
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 private struct InnerGrid<Content>: View where Content: View {
     
+    private let width: CGFloat
     private let spacing: CGFloat
     private let rows: [[Int]]
     private let alignment: HorizontalAlignment
@@ -61,12 +63,14 @@ private struct InnerGrid<Content>: View where Content: View {
     private let columnWidth: CGFloat
     
     init(
+        width: CGFloat,
         spacing: CGFloat,
         items: [Int],
         alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Int, CGFloat) -> Content,
         gridDefinition: GridCalculator.GridDefinition
     ) {
+        self.width = width
         self.spacing = spacing
         self.alignment = alignment
         self.content = content
@@ -86,7 +90,9 @@ private struct InnerGrid<Content>: View where Content: View {
                         }
                     }.padding(.horizontal, self.spacing)
                 }
-            }.padding(.top, spacing)
+            }
+            .padding(.top, spacing)
+            .frame(width: width)
         }
     }
 }
