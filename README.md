@@ -5,10 +5,15 @@ A flexible grid layout view for SwiftUI.
 ![Release](https://img.shields.io/github/v/release/pietropizzi/GridStack?color=blue&sort=semver)
 ![Build & Test](https://github.com/pietropizzi/GridStack/workflows/Build%20&%20Test/badge.svg)
 
-![macOS](https://img.shields.io/badge/supports-macOS-success)
-![iOS](https://img.shields.io/badge/supports-iOS-success)
-![tvOS](https://img.shields.io/badge/supports-tvOS-success)
-![watchOS](https://img.shields.io/badge/supports-watchOS-success)
+## Supported Platforms
+
+### 📱 iOS 13+
+
+### 💻 macOS 10.15+
+
+### 📺 tvOS 13+
+
+### ⌚ watchOS 6+
 
 Simply pass the minimum width the grid cells should have and the spacing between them and it will adjust depending on the available width.
 
