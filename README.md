@@ -3,6 +3,7 @@
 A flexible grid layout view for SwiftUI.
 
 ![Release](https://img.shields.io/github/v/release/pietropizzi/GridStack?color=blue&sort=semver)
+![Build & Test](https://github.com/pietropizzi/GridStack/workflows/Build%20&%20Test/badge.svg)
 
 ![macOS](https://img.shields.io/badge/supports-macOS-success)
 ![iOS](https://img.shields.io/badge/supports-iOS-success)
