@@ -14,14 +14,7 @@ Simply pass the minimum width the grid cells should have and the spacing between
 
 So writing this:
 
-```swift
-GridStack(minCellWidth: 300, spacing: 2, numItems: 15) { index, cellWidth in
-    Text("\(index)")
-        .foregroundColor(.white)
-        .frame(width: cellWidth, height: cellWidth * 0.66)
-        .background(Color.blue)
-}
-```
+![Code](https://user-images.githubusercontent.com/410305/74313631-5670ce80-4d74-11ea-9814-4e06e8463372.png)
 
 will give you you this:
 
