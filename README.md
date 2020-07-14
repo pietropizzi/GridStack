@@ -2,6 +2,16 @@
 
 A flexible grid layout view for SwiftUI.
 
+## WWDC20 Update
+
+Apple  released [`LazyVGrid`](https://developer.apple.com/documentation/swiftui/lazyvgrid) and [`LazyHGrid`](https://developer.apple.com/documentation/swiftui/lazyhgrid) at WWDC20.
+
+If you are fine to only support **i(Pad)OS 14, macOS 11, tvOS 14, watchOS 7** respectively those `^--` are definitely the way to go.
+
+If you want to support **i(Pad)OS 13, macOS 10.15, tvOS 13, watchOS 6** keep on reading.
+
+---
+
 ![Release](https://img.shields.io/github/v/release/pietropizzi/GridStack?color=blue&sort=semver)
 ![Build & Test](https://github.com/pietropizzi/GridStack/workflows/Build%20&%20Test/badge.svg)
 
