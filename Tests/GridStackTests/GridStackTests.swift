@@ -68,11 +68,23 @@ final class GridCalculatorTests: XCTestCase {
         XCTAssertEqual(columnWidth, 280)
     }
     
+    func test_zeroAvailableWidth_givesZeroColumnsAndColumnWidth() {
+        let (columnWidth, columnCount) = subject.calculate(
+            availableWidth: 0,
+            minimumCellWidth: 290,
+            cellSpacing: 10
+        )
+        
+        XCTAssertEqual(columnCount, 0)
+        XCTAssertEqual(columnWidth, 0)
+    }
+    
     static var allTests = [
         ("test_cellsFitExactlyWithoutSpacing", test_threeCellsFitExactlyWithoutSpacing),
         ("test_cellsFitExactlyWithSpacing", test_threeCellsFitExactlyWithSpacing),
         ("test_threeCellsJustDontFit", test_threeCellsJustDontFit),
         ("test_minimumCellWidthIsWiderThanAvailableSpace_givesOneColumn", test_minimumCellWidthIsWiderThanAvailableSpace_givesOneColumn),
-        ("test_minimumCellWidthWithSpacingIsWiderThanAvailableSpace_givesOneColumn", test_minimumCellWidthWithSpacingIsWiderThanAvailableSpace_givesOneColumn)
+        ("test_minimumCellWidthWithSpacingIsWiderThanAvailableSpace_givesOneColumn", test_minimumCellWidthWithSpacingIsWiderThanAvailableSpace_givesOneColumn),
+        ("test_zeroAvailableWidth_givesZeroColumnsAndColumnWidth", test_zeroAvailableWidth_givesZeroColumnsAndColumnWidth)
     ]
 }
