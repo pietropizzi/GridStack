@@ -81,14 +81,16 @@ private struct InnerGrid<Content>: View where Content: View {
     var body : some View {
         ScrollView(.vertical) {
             VStack(alignment: alignment, spacing: spacing) {
-                ForEach(rows, id: \.self) { row in
-                    HStack(spacing: self.spacing) {
-                        ForEach(row, id: \.self) { item in
-                            // Pass the index and the cell width to the content
-                            self.content(item, self.columnWidth)
-                                .frame(width: self.columnWidth)
-                        }
-                    }.padding(.horizontal, self.spacing)
+                if self.columnWidth > 0 {
+                    ForEach(rows, id: \.self) { row in
+                        HStack(spacing: self.spacing) {
+                            ForEach(row, id: \.self) { item in
+                                // Pass the index and the cell width to the content
+                                self.content(item, self.columnWidth)
+                                    .frame(width: self.columnWidth)
+                            }
+                        }.padding(.horizontal, self.spacing)
+                    }
                 }
             }
             .padding(.top, spacing)
