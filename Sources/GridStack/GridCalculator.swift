@@ -11,6 +11,11 @@ struct GridCalculator {
         minimumCellWidth: CGFloat,
         cellSpacing: CGFloat
     ) -> GridDefinition {
+        // Width for views inside a NavigationView might be reported as 0 on the first pass
+        guard availableWidth != 0 else {
+            return (columnWidth: 0, columnCount: 0)
+        }
+        
         /**
          * 1. Subtract the cell spacing once from all the available width
          * 2. Add the cell spacing to each cell Width
